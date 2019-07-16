@@ -1,0 +1,372 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Skills JavaScript</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/styles.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body class="container">
+
+<h1>JavaScript Assessment</h1>
+<p>
+  For each numbered problem, fill in the corresponding <code>&lt;script&gt;</code>
+  section with JavaScript to solve the problem. The location of this file is
+  <strong>templates/js-assessment.html</strong>.</p>
+<p>
+  <b>Note:</b> you should only add JavaScript; you cannot change the HTML 
+  otherwise <b>at all</b>. Read questions carefully. Some require you to use 
+  jQuery and others specifically don't allow it.
+</p>
+<p>We didn't include jQuery in this document, though&mdash;so your first task
+  before using any JQuery is to include it!
+</p>
+<img src="http://i57.tinypic.com/15fhuo8.jpg">
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<h3>Manipulating the DOM</h3>
+
+<p>
+  Add an event listener to the 'signIn' button that toggles the text of the
+  button on click. If the button says Log In, change the text to Log Out, and if
+  it says Log Out, toggle it to say Log In.
+</p>
+<p>Please use plain JavaScript and not jQuery for this problem. Do not update
+  any of the HTML provided.</p>
+
+<button id='signIn' class='signInText'>Log In</button>
+<script>
+  "use strict";
+  // code here for above-problem
+
+  const logInButton = document.querySelector('#signIn');
+
+  function changeLogInButton(evt){
+
+    if (logInButton.innerHTML === 'Log In'){
+
+      logInButton.innerHTML = 'Log Out';
+    }
+    else{
+
+      logInButton.innerHTML = 'Log In';
+    }
+
+  }
+
+logInButton.addEventListener('click', changeLogInButton);
+
+
+</script>
+
+<div class="hint">
+  <div>
+    Don't know or don't remember how to change the text of an element you find
+    in JavaScript?
+    That's what the console.dir(object) feature is so useful for&mdash;it gives
+    you the complete list of properties/methods on an object!
+  </div>
+</div>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<h3>Preventing Form Submission</h3>
+<p>
+  Normally, this form submits to <code>some-script</code>. Make it pop up an
+  alert box instead. Please use plain JavaScript (not jQuery) to do this. Do not 
+  update any of the HTML provided.
+</p>
+
+<fieldset>
+  <form action="some-script" id="prevent-form-submission-form">
+    Favorite color: <input type="text" name="favorite-color" id="favorite-color-field">
+    <input type="submit" id="prevent-form-submission-button" value="Just an Alert, Please!">
+  </form>
+</fieldset>
+
+<script>
+  "use strict";
+  // code here for above problem
+
+  const colorForm = document.querySelector('#prevent-form-submission-form');
+
+  const alertPopUp = document.querySelector('#prevent-form-submission-button');
+
+  function changeAlertPopUp (evt){
+
+// Here we could use .defaultValue to change the text in the button but that would change the HTML.
+    alertPopUp = alert('We do not have any colors at the moment');
+
+    // alertPopUp.defaultValue = alert('We do not have any colors at the moment') 
+  };
+
+// colorForm.addEventListener('mouseover', changeAlertPopUp) //many ways to do this
+colorForm.addEventListener('click', changeAlertPopUp);
+
+</script>
+
+<div class="hint">
+  <div>
+    Remember that you can listen for events on forms as well as buttons. What
+    event should you listen for here?
+  </div>
+</div>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<h3>Color Change</h3>
+<p>
+  Write code so that when someone clicks the button with the id 'blue', all
+  elements with the class 'colorChange' get a blue background, and when someone 
+  clicks the button with the id 'red', all the 'colorChange' class elements get a
+  red background.
+</p>
+<p>
+  You may use plain Javascript and/or jQuery for this problem. Do not change the
+  HTML for this problem.
+</p>
+
+<button id='red'>Turn Red</button>
+<button id='blue'>Turn Blue</button>
+<div id="colorHeadings">
+  <h1 class='colorChange'>This is a great header.</h1>
+  <h2>This is another cool header, but it shouldn't change color.</h2>
+  <p class='colorChange'>This paragraph should change color.</p>
+</div>
+
+<script>
+  "use strict";
+  // code here for above problem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const changeClassColor = document.querySelector('.colorChange');
+// changeClassColor.setAttribute('name', 'colorChange');
+// changeClassColor.setAttribute('backgroundcolor', 'red');
+
+
+
+
+// const changeRedButton = document.querySelector('#red');
+// const changeBlueButton = document.querySelector('#blue');
+
+
+// // // const changeClassColor = document.querySelectorAll('.colorChange');
+
+// function changeBackground(evt) {
+
+//   const changeClassColor = document.querySelector('.colorChange');
+
+
+//      changeClassColor.setAttribute('name', 'ok');
+//      changeClassColor.setAttribute('color', 'red');
+
+// };
+
+
+// changeRedButton.addEventListener('mouseover', changeBackground);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<h3>Down With Cats!</h3>
+<p>You should use jQuery for this part.</p>
+
+<div class="hint">
+  <div>
+    Remember you need a script tag in the head of this page that pulls in jQuery's
+    source code.
+  </div>
+</div>
+<p>
+  Due to complaints from staff who are not entirely cat fans, we are interested 
+  in increasing the number of other cute animals in our curriculum. We need you 
+  to change the following image of a cat to one of a dog when you double-click 
+  on the image. Feel free to Google for any cute animal photo you would like to
+  use. <b>Please use jQuery to complete this task.</b> Do not update any of the 
+  HTML provided.
+</p>
+
+<fieldset>
+  <img src="https://s-media-cache-ak0.pinimg.com/236x/d3/e9/fc/d3e9fc222c9bd0d12e0ff126acf7df00.jpg" alt="Adorbz" id="kittenz-rule">
+</fieldset>
+
+<script>
+  "use strict";
+  // code here for above problem
+
+
+
+
+function changePicture(evt){
+
+  $('#kittenz-rule').attr('src', 'https://loopnewslive.blob.core.windows.net/liveimage/sites/default/files/2017-06/foFwHbi9BF.jpg');
+ };
+
+$('#kittenz-rule').on('dblclick', changePicture)
+
+
+
+// $('#kittenz-rule').dblclick(function(){
+
+//   $('#kittenz-rule').attr('src', 'https://loopnewslive.blob.core.windows.net/liveimage/sites/default/files/2017-06/foFwHbi9BF.jpg')
+
+// });
+
+
+</script>
+
+<div class="hint">
+  <div>
+    How do you change an attribute with jQuery?
+  </div>
+</div>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<h3>Factorial</h3>
+<p>
+  The factorial of a number is the product of an integer and all the integers 
+  below it. For example, the factorial of 4 is equal to 4 * 3 * 2 * 1 = 24. The 
+  factorial of 6 is 6 * 5 * 4 * 3 * 2 * 1 = 720.
+</p>
+<ul>
+  <li> 
+    Write the following code to calculate the factorial of a positive integer (you 
+    don't need to worry about negative numbers).
+  </li>
+  <li>
+    Write a function that calculates the factorial of a positive number
+    Add an event listener that catches when someone clicks on the 'calculate' 
+    button and:
+    <ul>
+      <li> gets whatever number is inside the 'number' input field</li>
+      <li>calls your function that calculates a factorial</li>
+      <li>puts the result of the function inside the 'result' span</li>
+    </ul>
+  </li>
+</ul>
+<p>
+You may use <b>plain JavaScript</b> and <b>jQuery</b> for this problem. Do not update any of the HTML provided.
+</p>
+
+<p>For which number would you like the factorial?</p>
+<div>
+  <input type='number' name='number' id='number'>
+  <button id='calculate'>Calculate!</button>
+</div>
+
+<p>
+  <b>Result: </b><span id='result'></span>
+</p>
+
+<script>
+  "use strict";
+  // code here for above problem
+</script>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<h2>AJAX</h2>
+
+
+
+<h3>AJAX meets Star Wars</h3>
+<p>
+  There is a great API called SWAPI -- the Star Wars API. It can receive GET 
+  requests and sends back information in JSON format. It does not require any 
+  kind of authentication or token to use.
+</p>
+<p>
+  We want to use data from SWAPI to display some information on our page. 
+  Specifically, we are interested in getting information about the planet 
+  Tatooine and displaying the planet's terrain, climate, and population.
+</p>
+<p>
+ To Do:
+</p>
+<ul>
+  <li>
+    add an event listener on the button with the id 'getInfo' so that when it is clicked, an AJAX request is made to SWAPI.
+  </li>
+  <li>
+    the AJAX request should go to the following route via a GET request: 'https://swapi.co/api/planets/1/'
+  </li>
+  <li>
+    after the AJAX request has been made, the Star Wars API will send back results. To explore what the results look like, just go here in your browser: https://swapi.co/api/planets/1.
+  </li>
+  <li>
+    write a success function for the AJAX call that:
+    <ul>
+      <li>
+        gets the terrain, climate, and population information from the results of the AJAX request (remember, the results are JSON, so you can grab information just like you would from a regular JavaScript object).
+      </li>
+      <li>
+        puts each of those pieces of information into the respective <span> elements on the page.
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>
+  You may use Javascript and jQuery to do this. Do not update any of the HTML provided.
+</p>
+
+<h1>All About Tatooine</h1>
+<button id='getInfo'>Get Information!</button>
+<p>
+  <ul>
+    <li><b>Climate:</b> <span id='climate'>Unknown</span></li>
+    <li><b>Terrain:</b> <span id='terrain'>Unknown</span></li>
+    <li><b>Population:</b> <span id='population'>Unknown</span></li>
+  </ul>
+</p>
+<script>
+  // code here for above problem
+</script>
+
+
+</body>
+</html>
