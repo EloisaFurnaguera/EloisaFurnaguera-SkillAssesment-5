@@ -141,69 +141,24 @@ colorForm.addEventListener('click', changeAlertPopUp);
   // code here for above problem
 
 
+function changeClassColorRed(evt){
+  $('.colorChange').css('background-color', 'red');  
+  
+};
 
 
+function changeClassColorBlue(evt){
+  $('.colorChange').css('background-color', 'blue');  
+  
+};
+
+$('#blue').on('click', changeClassColorBlue);
+
+$('#red').on('click', changeClassColorRed);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const changeClassColor = document.querySelector('.colorChange');
-// changeClassColor.setAttribute('name', 'colorChange');
-// changeClassColor.setAttribute('backgroundcolor', 'red');
-
-
-
-
-// const changeRedButton = document.querySelector('#red');
-// const changeBlueButton = document.querySelector('#blue');
-
-
-// // // const changeClassColor = document.querySelectorAll('.colorChange');
-
-// function changeBackground(evt) {
-
-//   const changeClassColor = document.querySelector('.colorChange');
-
-
-//      changeClassColor.setAttribute('name', 'ok');
-//      changeClassColor.setAttribute('color', 'red');
-
-// };
-
-
-// changeRedButton.addEventListener('mouseover', changeBackground);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//I found .css on https://www.w3schools.com/jquery/jquery_css.asp 
+// I  didnt know any othre way.
 
 
 
@@ -237,7 +192,6 @@ colorForm.addEventListener('click', changeAlertPopUp);
 <script>
   "use strict";
   // code here for above problem
-
 
 
 
@@ -306,7 +260,40 @@ You may use <b>plain JavaScript</b> and <b>jQuery</b> for this problem. Do not u
 <script>
   "use strict";
   // code here for above problem
+
+
+   function getFactorial (evt){
+
+    let numberToCal = $('#number').val();
+
+      const num_list = []; 
+      let i = 0;
+
+      while (i < numberToCal){
+          i += 1;
+          num_list.push(i);   
+      };
+
+      i = 0;
+      let count = num_list[i];
+
+     while (i < (numberToCal - 1)){
+        count = count * num_list[ i + 1];
+        i += 1;
+       };
+     
+     $('#result').html('');
+     $('#result').append(count);
+
+
+     return count;
+
+  $('#calculate').on('click', getFactorial);
+ 
+
 </script>
+
+
 
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
