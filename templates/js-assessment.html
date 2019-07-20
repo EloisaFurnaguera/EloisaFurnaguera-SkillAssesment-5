@@ -264,6 +264,7 @@ You may use <b>plain JavaScript</b> and <b>jQuery</b> for this problem. Do not u
 
    function getFactorial (evt){
 
+    
     let numberToCal = $('#number').val();
 
       const num_list = []; 
@@ -286,7 +287,9 @@ You may use <b>plain JavaScript</b> and <b>jQuery</b> for this problem. Do not u
      $('#result').append(count);
 
 
-     return count;
+      return count;
+
+  };
 
   $('#calculate').on('click', getFactorial);
  
@@ -352,7 +355,43 @@ You may use <b>plain JavaScript</b> and <b>jQuery</b> for this problem. Do not u
 </p>
 <script>
   // code here for above problem
+
+
+function changeTheInfo(response){
+
+
+
+  $('#climate').html(response.climate);
+  $('#terrain').html(response.terrain);
+  $('#population').html(response.population);
+};
+
+
+
+ function getTheApi(){
+
+  console.log("yes")
+
+  $.get('https://swapi.co/api/planets/1/', changeTheInfo);
+
+ };
+
+
+  $('#getInfo').on('click', getTheApi);
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>
